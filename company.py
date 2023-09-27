@@ -28,6 +28,8 @@ class Company:
     short_desc = ""
     founders = []
     def __init__(self, slug):
+        if slug is None:
+            return
         self.slug = slug
         self.yc_link = "https://www.ycombinator.com/companies/" + slug
         self.founders = []
@@ -53,7 +55,7 @@ class Company:
             )
         print(self.name)
         print(self.founders[0].full_name)
-        time.sleep(1)
+        time.sleep(0.5)
     
     def get_json(self):
         company_map = {'name': self.name, 'slug': self.slug, 'website': self.website,
