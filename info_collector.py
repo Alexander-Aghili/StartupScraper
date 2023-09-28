@@ -8,6 +8,8 @@ f.close()
 
 for company in data['results'][0]['hits']:
     c = Company(company["slug"])
+    c.populate_company()
+    
     f = open("./companies_json/" + c.name + ".json", "w+")
     f.write(c.get_json())
     f.close()

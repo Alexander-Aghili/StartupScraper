@@ -6,6 +6,8 @@ import os
 print("name,website,ycdc_status,location")
 
 dir_path = "./companies_json"
+domain_link="http://localhost:5000/"
+gen_email_link= domain_link + "genemail/"
 dir = os.listdir(dir_path)
 
 for file in dir:
@@ -22,6 +24,10 @@ for file in dir:
                     founder["title"] = ""
                 csv = csv + ",\"" + founder["title"] + "\""
                 
+                founder_name_link = founder["full_name"].replace(" ", "%20")
+                company_name_link = data["name"].replace(" ", "%20")
+                csv = csv + ",\"" + gen_email_link + company_name_link + "/" + founder_name_link + "\""
+
         print(csv)
     except Exception as e:
         pass

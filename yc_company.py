@@ -33,13 +33,14 @@ class Company:
         self.slug = slug
         self.yc_link = "https://www.ycombinator.com/companies/" + slug
         self.founders = []
-        self.populate_company()
 
     def populate_company(self):
         html = get_html(self.yc_link)
         json = get_json_from_html(html)
         company = json['company']
+        self.create_company_from_json(company)
 
+    def create_company_from_json(self, company):
         self.name = company.get('name')
         self.website = company.get('website')
         self.linkedin = company.get('linkedin_url')
@@ -53,10 +54,8 @@ class Company:
                         founder.get('full_name'), founder.get('title'),
                         founder.get('linkedin_url'))
             )
-        print(self.name)
-        print(self.founders[0].full_name)
         time.sleep(0.5)
-    
+
     def get_json(self):
         company_map = {'name': self.name, 'slug': self.slug, 'website': self.website,
                        'linkedin': self.linkedin, 'ycdc_status': self.ycdc_status, 'team_size': self.team_size,
