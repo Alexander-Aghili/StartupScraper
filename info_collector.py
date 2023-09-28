@@ -1,7 +1,5 @@
 #!/bin/python3
-
-from email_creator import create_email_to_founder
-from company import Company
+from yc_company import Company
 import json
 
 f = open("yc-companies.json", "r")

@@ -1,4 +1,4 @@
-from company import Founder, Company
+from yc_company import Founder, Company
 import openai, os
 
 openai.organization = "org-LTjW6EI8VHhOhFqFmbekYv0X"
