@@ -1,8 +1,11 @@
+import requests
 from yc_company import Founder, Company
 import openai, os
+import google.generativeai as palm
 
-openai.organization = "org-LTjW6EI8VHhOhFqFmbekYv0X"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+
+palm.configure(api_key='AIzaSyBOp21--YO2qrkFnQJ4ySJRDL4bk5nXJ8w')
+
 
 instruction_prompt = "From the following founder bio and company description, write a personalized email to them writing about an interest in an internship. Less than 100 Words"
 personal_details = "I, Alexander Aghili, am a sophomore at University of California, Santa Cruz with experience in embedded systems, databases, and APIs."
@@ -25,7 +28,14 @@ def get_email_format():
         Alexander Aghili
     """ 
 
-def create_email_to_founder(company: Company, founder: Founder):
+def create_email_to_founder_bard(company: Company, founder: Founder):
+    message = instruction_prompt + "\n" + get_founder_prompt(company, founder) + "\n" + personal_details + "\n" + get_email_format()
+    return palm.chat(messages=message).last
+
+def create_email_to_founder_gpt(company: Company, founder: Founder):
+    openai.organization = "org-LTjW6EI8VHhOhFqFmbekYv0X"
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+
     context_messages = []
     context_messages.append({'role': 'system', 'content': instruction_prompt})
     context_messages.append({'role': 'system', 'content': get_founder_prompt(company,founder)})

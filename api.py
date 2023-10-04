@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from email_creator import create_email_to_founder
+from email_creator import create_email_to_founder_bard
 from yc_company import Company
 import json
 app = Flask(__name__)
@@ -15,7 +15,7 @@ def create_founder_email(company_name, founder_name):
         company.create_company_from_json(data) 
         for founder in company.founders:
             if founder.full_name == founder_name:
-                return create_email_to_founder(company, founder)
+                return create_email_to_founder_bard(company, founder)
 
 if __name__ == '__main__':
     app.run(debug = True)
