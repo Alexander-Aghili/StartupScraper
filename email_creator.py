@@ -28,7 +28,7 @@ def get_email_format():
         Alexander Aghili
     """ 
 
-def create_email_to_founder_bard(company: Company, founder: Founder):
+def create_email_to_founder_palm(company: Company, founder: Founder):
     message = instruction_prompt + "\n" + get_founder_prompt(company, founder) + "\n" + personal_details + "\n" + get_email_format()
     return palm.chat(messages=message).last
 

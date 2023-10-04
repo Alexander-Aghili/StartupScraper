@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email</title>
+</head>
+<body>
+    <div id="response">
+        {{ email_response }}
+    </div>
+    <br>
+    <button id="regenerateButton">Regenerate</button>
+    <button id="saveButton">Save</button>
+
+    <script>
+        // JavaScript code to handle button actions goes here
+        const textArea = document.getElementById("textArea");
+        const regenerateButton = document.getElementById("regenerateButton");
+        const saveButton = document.getElementById("saveButton");
+
+        // Function to save the text from the text area
+        function saveText() {
+            const responseDiv = document.getElementById("response");
+            const text = responseDiv.textContent;
+
+            // Create a Blob containing the text
+            const blob = new Blob([text], { type: 'text/plain' });
+
+            // Get the pathname (path) of the current page
+            const pathname = window.location.pathname;
+            const parts = pathname.split('/');
+            const lastString = parts[2].replace(/%20/g, ''); // Remove spaces (%20)
+    
+            // Create an invisible download link and trigger a click event
+            const a = document.createElement("a");
+            a.href = window.URL.createObjectURL(blob);
+            a.download = lastString + ".txt"; // Specify the file name
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+
+            // Clean up
+            window.URL.revokeObjectURL(a.href);
+            document.body.removeChild(a);
+        }
+
+        saveButton.addEventListener("click", saveText);
+    </script>
+</body>
+</html>
