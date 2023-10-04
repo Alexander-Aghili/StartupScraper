@@ -96,12 +96,17 @@
                 const cells = lines[i].split(",");
                 for (let j = 0; j < cells.length; j++) {
                     let cell = cells[j].trim();
+                    if (cell.startsWith('"') && !cell.endsWith('"')) {
+                        cell += "," + cells[j+1];
+                    }
                     if (cell.startsWith('"') && cell.endsWith('"')) {
                         // Remove quotation marks if they are present
                         cell = cell.slice(1, -1);
+                    } else if (cell.endsWith('"')) {
+                        continue;
                     }
                     const td = document.createElement("td");
-                    if (j === 1 || j === 6 || j === 9) { // Columns with URLs
+                    if (cell.startsWith("http")) { // Columns with URLs
                         const anchor = document.createElement("a");
                         anchor.textContent = cell;
                         anchor.href = cell;
@@ -115,12 +120,9 @@
                 table.appendChild(row);
             }
 
-
-
             tableContainer.appendChild(table);
         }
-        
-        fetchAndDisplayCSV();
+
     </script>
 </body>
 </html>

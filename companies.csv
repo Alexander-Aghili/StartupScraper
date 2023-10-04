@@ -1,4 +1,4 @@
-name,website,ycdc_status,location
+name,website,ycdc_status,location,founder_name,position,email_generation,founder_name,position,email_generation,founder_name,position,email_generation,founder_name,position,email_generation,founder_name,position,email_generation,founder_name,position,email_generation
 "Resend",https://resend.com,Active,"San Francisco","Zeno Rocha","","http://localhost:5000/genemail/Resend/Zeno%20Rocha","Bu Kinoshita","","http://localhost:5000/genemail/Resend/Bu%20Kinoshita"
 "PagerDuty",http://pagerduty.com,Public,"San Francisco","Alex Solomon","CTO","http://localhost:5000/genemail/PagerDuty/Alex%20Solomon"
 "Sohar Health",https://www.soharhealth.com,Active,"London, United Kingdom","Dr Ashish Mandavia MD","","http://localhost:5000/genemail/Sohar%20Health/Dr%20Ashish%20Mandavia%20MD","Lucas Gordon","","http://localhost:5000/genemail/Sohar%20Health/Lucas%20Gordon"
@@ -21,7 +21,7 @@ name,website,ycdc_status,location
 "Flock Safety",http://www.flocksafety.com,Active,"Atlanta, GA","Garrett Langley","CEO","http://localhost:5000/genemail/Flock%20Safety/Garrett%20Langley","Matt Feury","CTO","http://localhost:5000/genemail/Flock%20Safety/Matt%20Feury"
 "Mantys",https://www.mantys.io/,Active,"Bengaluru, India","Kriti Arora","","http://localhost:5000/genemail/Mantys/Kriti%20Arora","Mudit Dangi","","http://localhost:5000/genemail/Mantys/Mudit%20Dangi"
 "Koywe",https://koywe.com,Active,"Miami, FL","Ignacio Detmer","","http://localhost:5000/genemail/Koywe/Ignacio%20Detmer","Guillermo Acuña","","http://localhost:5000/genemail/Koywe/Guillermo%20Acuña"
-"GrubMarket",http://grubmarket.com,Active,"San Francisco","Mike Xu","CEO, , President","http://localhost:5000/genemail/GrubMarket/Mike%20Xu"
+"GrubMarket",http://grubmarket.com,Active,"San Francisco","Mike Xu","CEO,President","http://localhost:5000/genemail/GrubMarket/Mike%20Xu"
 "Osmind",https://osmind.org/,Active,"San Francisco","Lucia Huang","","http://localhost:5000/genemail/Osmind/Lucia%20Huang","Jimmy Qian","","http://localhost:5000/genemail/Osmind/Jimmy%20Qian"
 "Labdoor",https://labdoor.com,Active,"San Francisco","Neil Thanedar","CEO","http://localhost:5000/genemail/Labdoor/Neil%20Thanedar","Rafael Ferreira","CMO","http://localhost:5000/genemail/Labdoor/Rafael%20Ferreira","Helton Souza","CTO","http://localhost:5000/genemail/Labdoor/Helton%20Souza"
 "Standard AI",https://standard.ai,Active,"San Francisco","Jordan Fisher","CEO","http://localhost:5000/genemail/Standard%20AI/Jordan%20Fisher","Michael Suswal","COO","http://localhost:5000/genemail/Standard%20AI/Michael%20Suswal","David Valdman","","http://localhost:5000/genemail/Standard%20AI/David%20Valdman"

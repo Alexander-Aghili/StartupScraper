@@ -43,7 +43,13 @@
             document.body.removeChild(a);
         }
 
+        function regenerate() {
+            document.body.innerHTML = "";
+            window.location.reload();
+        }
+
         saveButton.addEventListener("click", saveText);
+        regenerateButton.addEventListener("click", regenerate);
     </script>
 </body>
 </html>
